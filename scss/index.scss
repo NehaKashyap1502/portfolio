@@ -1,0 +1,268 @@
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.blue {
+    color: #2d2dd6;
+}
+
+p{
+    margin: 0;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #212529;
+
+    &:hover {
+        color: initial;
+    }
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+}
+
+
+.offcanvas {
+    &-start {
+        right: 0;
+        left: initial;
+        width: 350px;
+        transform: translateX(100%);
+    }
+
+    &-header {
+        background-color: #2d2dd6;
+        border-bottom: 1px solid #ccc;
+        color: #fff;
+    }
+
+    &-body {
+        .rightsidebar {
+            li {
+                padding: 10px 10px;
+
+                &.active,
+                &:hover {
+                    background-color: #2d2dd6;
+                    border-radius: 5px;
+
+                    a {
+                        color: #fff;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+.modal {
+    background: #00000080;
+
+    &-dialog {
+        height: calc(100% - 80px);
+        width: 100%;
+        max-width: calc(100% - 80px);
+        margin: 40px auto;
+        background-color: #151515;
+        border-radius: 5px;
+    }
+
+    &-content {
+        height: 100%;
+        border: none;
+    }
+
+    &-body {
+        background-color: #151515;
+        border-radius: 5px;
+
+        .bg-blue {
+            position: absolute;
+            z-index: 1;
+            width: 30%;
+            background-color: #2d2dd6;
+            clip-path: polygon(100% 0, 80% 50%, 100% 100%, 0 100%, 0 0);
+            top: 0;
+            // left: -30%;
+            left: 0;
+            bottom: 0;
+            transition: all .5s .5s ease;
+            border-radius: 5px;
+        }
+
+        .bg-black {
+            position: absolute;
+            z-index: 1;
+            width: 30%;
+            background-color: #070707;
+            clip-path: polygon(20% 0, 100% 0, 100% 50%, 100% 100%, 20% 100%, 0 50%);
+            top: 0;
+            // right: -30%;
+            right: 0;
+            bottom: 0;
+            transition: all .5s .5s ease;
+            border-radius: 5px;
+        }
+
+        .cancel {
+            position: absolute;
+            top: -25px;
+            right: -25px;
+
+            i {
+                color: #ccc;
+            }
+        }
+
+        .card {
+            z-index: 1;
+            width: 30vw;
+            position: absolute;
+            top: 50%;
+            left: 50px;
+            transform: translateY(-50%);
+            align-items: center;
+            background: #1e1e1f;
+            color: #ccc;
+            height: 560px;
+            border-radius: 12px;
+
+            &-wrapper {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 40px 10%;
+            }
+
+            &-img {
+                margin-top: 30px;
+                width: 200px;
+                height: 200px;
+                background: #ccc;
+                border-radius: 100%;
+
+                img {
+                    max-width: 100%;
+                    border-radius: 100%;
+                }
+            }
+
+            &-title {
+                text-align: center;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: -0.8px;
+                font-size: 30px;
+            }
+
+            &-body {
+                width: 100%;
+                text-align: center;
+
+                .social-icons {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+
+                    li {
+                        padding: 10px;
+                        margin: 0 5px;
+                        height: 45px;
+                        width: 45px;
+                        background: #000;
+                        border-radius: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        cursor: pointer;
+
+                        &:hover {
+                            background: #2d2dd6;
+                        }
+
+                        a {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+
+                        i {
+                            font-size: 22px !important;
+                            color: #ccc;
+                        }
+                    }
+                }
+            }
+
+            &-biography {
+                width: calc(70vw - 200px);
+                height: 560px;
+                right: 50px;
+                left: initial;
+                background: #1e1e1f;
+                color: #ccc;
+                overflow: auto;
+
+                .heading-biography {
+                    width: 100%;
+                    position: relative;
+
+                    span {
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            width: 120px;
+                            height: 2px;
+                            background-color: #2d2dd6;
+                            bottom: 0;
+                            left: 0;
+                        }
+                    }
+                }
+
+                .card-wrapper {
+                    padding: 40px 7%;
+
+                }
+
+                .basic-info {
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin-top: 20px;
+                    li {
+                        background-color: #111;
+                        padding: 7px 25px;
+                        line-height: 1.6;
+                        margin: 0 0 10px 10px;
+                        font-size: 20px;
+                        border-radius: 8px;
+                        text-align: center;
+                        p{
+                            span{
+                                a{
+                                    color: #fff;
+                                    &:hover{
+                                        color: #2d2dd6;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
